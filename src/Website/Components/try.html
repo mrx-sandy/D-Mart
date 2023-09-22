@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-commerce</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .product img {
+            max-width: 100px;
+            margin-right: 20px;
+        }
+
+        .cart {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .cart h2 {
+            margin-bottom: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cart-total {
+            font-weight: bold;
+        }
+
+        .checkout-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .checkout-form label {
+            margin-bottom: 5px;
+        }
+
+        .checkout-form input {
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .checkout-button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .checkout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple E-commerce</h1>
+
+        <!-- Product Listing -->
+        <div class="product">
+            <img src="product1.jpg" alt="Product 1">
+            <div>
+                <h3>Product 1</h3>
+                <p>Price: $19.99</p>
+                <button onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="product2.jpg" alt="Product 2">
+            <div>
+                <h3>Product 2</h3>
+                <p>Price: $29.99</p>
+                <button onclick="addToCart('Product 2', 29.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Shopping Cart -->
+        <div class="cart">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                Total: $<span id="total">0.00</span>
+            </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <div class="checkout-form">
+            <h2>Checkout</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="address">Shipping Address:</label>
+            <textarea id="address" required></textarea>
+            <button class="checkout-button" onclick="checkout()">Place Order</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let total = 0;
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            total = 0;
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>$${item.price.toFixed(2)}</span>
+                `;
+                cartItems.appendChild(cartItem);
+                total += item.price;
+            });
+
+            const totalElement = document.getElementById('total');
+            totalElement.textContent = total.toFixed(2);
+        }
+
+        function checkout() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+
+            if (cart.length === 0 || !name || !email || !address) {
+                alert('Please fill in all required fields and add items to your cart before checking out.');
+                return;
+            }
+
+            // Here, you can implement the actual checkout process, e.g., send data to a server and process payment.
+
+            alert(`Thank you, ${name}! Your order of $${total.toFixed(2)} has been placed.`);
+            cart = [];
+            updateCart();
+        }
+    </script>
+</body>
+</html>

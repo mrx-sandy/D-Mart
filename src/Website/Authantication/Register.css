@@ -1,0 +1,97 @@
+
+  
+  /* Logo */
+ 
+  .page{
+    width: 700px;
+    height: 600px;
+    margin-bottom: 500px;
+    margin-left: 500px;
+  }
+  /* Form card */
+  .user-form-card {
+    background-color: #fff; /* Background color for the form card */
+    border-radius: 10px;
+    border:2px red;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .user-form-title h2 {
+    color: #007bff; /* Blue color for the title */
+    font-size: 24px;
+  }
+  
+  .user-form-title p {
+    color: #555; /* Dark gray color for the subtitle */
+    font-size: 16px;
+  }
+  
+  /* Form elements */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Form labels */
+  .form-group span {
+    display: block;
+    color: #333; /* Dark gray color for labels */
+    margin-bottom: 5px;
+  }
+  
+  /* Form inputs */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 5px solid #ddd; /* Light gray border for inputs */
+    border-radius: 5px;
+  }
+  
+  /* Checkbox styles */
+  .form-check-label {
+    color: #333;
+  }
+  
+  /* Button styles with animation */
+  .glow-on-hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #28a745; /* Green color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .glow-on-hover:hover {
+    background-color: #218838; /* Darker green color on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Remind section */
+  .user-form-remind a {
+    color: #dc3545; /* Red color for the "login here" link */
+    text-decoration: underline;
+  }
+  
+  .user-form-remind a:hover {
+    color: #c82333; /* Darker red color on hover */
+  }
+  
+  /* Footer */
+  .user-form-footer {
+    margin-top: 20px;
+    color: #777; /* Gray color for the footer text */
+    font-size: 14px;
+  }
+  
+  .user-form-footer a {
+    color: #777; /* Gray color for links in the footer */
+    text-decoration: none;
+  }
+  
+  .user-form-footer a:hover {
+    color: #333; /* Dark gray color on hover */
+  }
+  

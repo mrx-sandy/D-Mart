@@ -1,0 +1,68 @@
+/* Login.css */
+
+/* Basic styles */
+.user-form-card {
+    background-color: #77d07a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 1.1);
+    margin-top: 200px;
+  }
+  
+  .user-form-logo img {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .user-form-title h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .user-form-title p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Checkbox styles */
+  .form-check-label {
+    color: #333;
+  }
+  
+  /* Button styles with animation */
+  .glow-on-hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .glow-on-hover:hover {
+    background-color: #20af00;
+    color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Register link style */
+  .user-form-remind a {
+    color: #333;
+    text-decoration: underline;
+  }
+  
+  .user-form-remind a:hover {
+    color: #777;
+  }
+  
